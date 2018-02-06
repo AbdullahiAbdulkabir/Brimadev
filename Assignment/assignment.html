@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="ass.css">
+<title>Js-Assignment</title>
+        
+</head>	
+<body>
+	<div class="header">
+	<img src="image/icon-04.png" id="iicon" 	alt="">
+		<h2>Sign Up</h2>
+	</div>
+
+<!-- <form> -->
+ <div class="container">	
+	
+		<label>First Name</label>
+			 <input type="text"  id="fn" placeholder="Enter First Name..">  <br><br>
+		<label>Middle Name</label> 
+			<input type="text" name="Middlename" id="mdn" placeholder="Enter Middle Name..">
+			<br>
+<label>Last Name</label> 
+			<input type="text" name="Lastname" id="ln" placeholder="Enter Last Name..">
+			<br>
+		<label>Date of Birth</label> 
+			<input type="date" name="Date" id="dob" placeholder="">
+			<br>
+		<label>Gender</label> 
+			<input type="radio" name="male" id="male" class="Check" ><label>Male</label>
+			<input type="radio" name="male" id="female" class="Check" > <label>Female</label>
+			<br>
+		<label>Country</label>
+			 <input type="text" name="Country" id="country" 	 placeholder="Country">
+			 <br>
+		<label>Email</label> 
+			<input type="email" id="email" name="Email" placeholder="Enter Email..">
+			<br>
+		<label>Password</label> 
+			<input type="password" name="Password" placeholder="">
+			<br>
+		<label>Password</label>
+			 <input type="password" name="Password" placeholder="">
+			 <br>
+				<button id="btn" onClick="Return()">Submit</button> 
+   
+</div>   
+	<h2 id="Details"> 
+   		<div >Your Details</div> 
+   		<div id="fnr"></div> 
+   		<div id="mdnr"></div> 
+   		<div id="lnr"></div> 
+   		<div id="dobr"></div> 
+   		<div id=""></div> </h2>
+<script>
+ 
+ function Return() {
+ 	
+let fn1 = 	document.querySelector('#fn').value;
+ let fnw = document.querySelector('#fnr').innerHTML ="First Name: "+ fn1  ;
+ 
+ let mdn1 = document.querySelector('#mdn').value;
+ let mdn =document.querySelector('#mdnr').innerHTML ="Middle Name: "+mdn1;
+ //Last Name
+ let ln1 = document.querySelector('#ln').value;
+ let ln =document.querySelector('#lnr').innerHTML ="Last Name: " + ln1;
+ //DOB
+ let email1 = document.querySelector('#email').value;
+ let em =document.querySelector('#dobr').innerHTML = "Email: " + email1;
+ 
+ 
+ }
+ 
+</script>
+
+</body>
+</html>
+
+

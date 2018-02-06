@@ -1,0 +1,67 @@
+body{
+	margin: 0px 0px 0px;
+}
+	label{display: inline-block;
+		position: relative;
+		width: 100px;
+		margin-bottom: 2em;
+		color: yellow;
+		left: 100px
+	}
+	input{
+		position: relative;
+		left: 100px;
+		height: 2.5em;
+		width: 28em;
+		padding-left: 12px
+
+	}
+	.container{
+		background-color:#12143e; 
+		padding-top:2em;
+		margin:0px 12px 12px;
+	}
+	.Check{
+		width: 15px;
+		height: 15px;
+	}
+	.header{
+		background-color: orange;
+		margin-bottom: 0px;
+		
+		paddding-bottom:12px;
+		height: 4em;
+	}
+	h2{	color: yellow;
+	 margin-top: 0px;
+	padding-top: 10px;
+	padding-left: 12px;
+	}
+	
+.glyphicon{padding-right:/*220px*/ 78%;
+padding-bottom: ;		
+margin-bottom:20px;		
+}
+#iicon{height: 100%;	
+	float: right;
+	display:flex;
+	padding-right: 8em;
+	 
+	 
+	}
+#btn{	
+	background-color: #205a20;
+	color: white;
+	height: 40px;
+	width:8em;
+	margin-left: 19em; 
+	}
+#Details{	
+	color: yellow;
+	/*margin-left: 10em; */
+	/*margin-right: 20em; */
+	text-align: center;
+	/*margin-top: 12em; */
+	background-color: red;
+	/*padding-left: 5em;*/
+	}
