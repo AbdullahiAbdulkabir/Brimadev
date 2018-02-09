@@ -10,28 +10,18 @@ function Received() {
 	prompt('Enter a number'); 
 }
 
-// var num = 2;
-
-// var input = ;
 var input1= parseInt(Received());
 var Rand = Math.ceil(Math.random() * 10 + 1);
 
- if (input1> Rand) {
+ if (input1=== Rand) {
  	document.write("Guess is to high");
-	
-	// Received();
-}
-  else if (input1== Rand) {
-  	document.write("You are a genius");
-	
-	
-  }else {
+}else {
   document.write("Try Again " + "The Random number is "+ Rand);
-	Received(); 
+	  Received();
 	
  }
 
-// document.write(Rand);
+
 </script>
 </body>
 </html>
