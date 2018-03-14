@@ -8,9 +8,10 @@
 </head>
 <body>
 <div class="container">
+	<h2>Welcome, <?php echo $_POST["name"]; ?></h2>
 	<?php $musa_r = 21?>
 	<?php $abdullahi_r =42 ?>
-	<?php $emeka_r = 10 ?>
+	<?php $emeka_r = 15 ?>
 	<?php $emmanuel_r =20 ?>
 	
 	<table class="table table-hover">
@@ -69,9 +70,12 @@
  	elseif ($result>=40 && $result<=44) {
  		echo "B";
  	}
- 	elseif ( $result>=45 && $result>=50 ) {
+ 	elseif ( $result>=45 && $result<=50 ) {
  		echo "A";
  	}
+ 	// else {
+ 	// 	echo "GET A WAY";
+ 	// }
  }
 	?>
 </body>
