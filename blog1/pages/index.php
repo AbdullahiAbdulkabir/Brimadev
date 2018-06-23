@@ -14,9 +14,9 @@
                 <?php 
                   echo $row['Post'].'<br>'; ?>
               </div>
-              <a class="col-md-offset-9" href="Comments.php"><button class="btn btn-secondary ">Comments</button></a>
-              <a href="Update.php"><button class="btn btn-primary ">Update</button></a>
-             <a href=""> <button class="btn btn-danger ">Delete</button></a>
+             <!--  <a class="col-md-offset-9" href="Comments.php?id=<?php echo $row['id'] ?>"><button class="btn btn-secondary ">Comments</button></a> -->
+              <a href="Update.php?id=<?php echo $row['id']  ?> " ><button class="btn btn-primary col-md-offset-9">Update</button></a>
+             <a href="Delete.php?id=<?php echo $row['id'] ?>"> <button class="btn btn-danger ">Delete</button></a>
             </div>
               <?php  }  ?>
                <!-- container -->

@@ -26,7 +26,7 @@
         $password = $_POST['password'];
         $query = "SELECT * FROM users WHERE Name = '$name'";
         $result = mysqli_query($conn, $query);
-          while( $row = mysqli_fetch_array($result) ) {  
+          while( $row = mysqli_fetch_assoc($result) ) {  
             $_SESSION['User_level'] = $row['User_level'];
             $_SESSION['Name'] = $row['Name'];
                  if($row['Name'] ===  $name && $row['password'] === $password) {

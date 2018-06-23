@@ -6,6 +6,7 @@ if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['password
           $name = trim($name);
         $name = strip_tags($name);
         $name = htmlspecialchars($name);
+        $name = mysqli_real_escape_string($conn, $name);
         
          $level = $_POST['level'];
          $password = $_POST['password'];
