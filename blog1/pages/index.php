@@ -1,10 +1,18 @@
-<?php
-      session_start();
+<?php 
+      
      include '../includes/header.php' ;
+     // if(isset($_SESSION['login']) ) {  
+     //      // redirect_to('../index.php');
+     // }
 ?>          
             <!-- /.row -->
             <div class="row">
                <a href="Add.php" > <button class="btn btn-success pull-right" type="submit" name="Adpost" > Add a Post</button></a>
+               <?php echo time(). '<br>';
+               echo "Today: " .date('d/m/y');
+               $msg = $Uname;
+      
+                ?>
                 <h3 class="text-center">Recent Post</h3>
                <?php  while( $row = mysqli_fetch_array($respost) ) {  ?>
             <div class="panel panel-default">
@@ -43,5 +51,4 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
 </body>
-
 </html>

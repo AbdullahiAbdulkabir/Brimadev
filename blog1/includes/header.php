@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once 'database.php'; 
  include 'functions.php' ;
     
@@ -9,7 +9,7 @@ require_once 'database.php';
 
          $User_level= $_SESSION['User_level'];
         $Uname = $_SESSION['Name'];
-        echo "User level ".$User_level. $Uname;
+        // echo "User level ".$User_level. $Uname;
         
 ?>
 <!DOCTYPE html>

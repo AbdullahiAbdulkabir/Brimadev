@@ -1,5 +1,5 @@
-	<?php
-	  session_start();
+	<?php 
+    session_start();
     require_once 'includes/functions.php';
     require_once 'includes/database.php';
 	 ?>
@@ -22,6 +22,7 @@
 <body>
     <?php
     if(isset($_POST['login']) ) {
+        $_SESSION['login'] = $_POST['login'];
         $name = ucfirst( strtolower( $_POST['name']));
         $password = $_POST['password'];
         $query = "SELECT * FROM users WHERE Name = '$name'";
@@ -32,8 +33,8 @@
                  if($row['Name'] ===  $name && $row['password'] === $password) {
                         redirect_to('pages/index.php');
                 }else {
-                   $error = "Incorect login details";
-                
+                   $error = "Incorrect login details";
+                    
                 }
           } 
     } ?>

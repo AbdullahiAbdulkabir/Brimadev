@@ -1,4 +1,4 @@
-<?php  session_start();
+<?php 
      include '../includes/header.php' ;
      if (isset($_POST['Addpost'])) {
          $Apost= $_POST['Apost'];

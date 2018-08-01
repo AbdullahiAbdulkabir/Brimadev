@@ -1,38 +1,45 @@
-	<?php
-	require_once 'includes/functions.php';
+	<?php require_once 'includes/functions.php';
     include 'includes/database.php';
 if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['password'])) {
-         $name = ucfirst($_POST['name']);
-          $name = trim($name);
+        $name = ucfirst($_POST['name']);
+        $name = trim($name);
         $name = strip_tags($name);
         $name = htmlspecialchars($name);
         $name = mysqli_real_escape_string($conn, $name);
-        
-         $level = $_POST['level'];
-         $password = $_POST['password'];
+        $level = (int) $_POST['level'];
+        $password = $_POST['password'];
         $password = trim($password);
         $password = strip_tags($password);
         $password = htmlspecialchars($password);
-
             $link = mysqli_connect("localhost", "root", "","hms");
-
             if (!$link) {
                 echo "Error: Unable to connect to MySQL." . PHP_EOL;
-                echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
                 exit;
             }
             $db_select = mysqli_select_db( $link,"hms");//the first is the name of database, 
         if (!$db_select) {
         die("database selection failed") ;
-        }    
+        } 
+            $quer = "SELECT * FROM users WHERE Name= '$name'";
+        $result = mysqli_query($conn, $quer);
+        $namedb='';
+        $passdb='';
+    while( $row = mysqli_fetch_assoc($result) ) {               
+            $namedb = $row['Name'];
+            $passdb = $row['password']; 
+    } 
+        if (!($namedb===$name) && !($password === $passdb)) {
             $sql= "INSERT INTO users (Name, password,User_level) values ('$name', '$password', '$level')";
            $query= mysqli_query($link, $sql);
-
             if (!$query){
                 echo " <br> Error while quering" . mysqli_connect_error(). PHP_EOL;
             }else{
-              $ret= "Successful Created Account";
+              $ret= " <div class=\"alert alert-success\"><span class=\"glyphicon glyphicon-info-sign\"> Successful Created Account</div></div>";
             }
+              
+        }else  {
+              $ret = "<div class=\"alert alert-danger\"><span class=\"glyphicon glyphicon-info-sign\">  Already registered.</div></div>";
+        }
 }
      ?>
 <!DOCTYPE html>
@@ -64,10 +71,10 @@ if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['password
                 <div class="login-panel panel panel-default">
 	 		<?php if (isset($ret) ) { ?>
                    <div class="form-group">
-                          <div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> <?php echo $ret; ?>
-                          </div>
-                    </div>
+                          <!-- <div class=" "> -->
+                            <span class=""></span> <?php echo $ret; ?>
+                          <!-- </div> -->
+                    <!-- </div> -->
                   <?php
             } ?>
                     <div class="panel-heading">
@@ -98,9 +105,6 @@ if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['password
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button  class="btn btn-lg btn-success btn-block" type="submit" name="submit">Submit</a>
                             </fieldset>
-                    <?php 
-
-                             ?>
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<?php   session_start();
+<?php  
   
      include '../includes/header.php' ;
    
@@ -35,10 +35,10 @@ $Post = $ret['Post'];
  </head>
  <body>
      <form method="post">
-<h4 class="">Are you sure you want to delete</h4>
+<h4 class="">DELETE: <?php echo $Title; ?></h4>
  <!-- <input name="Title"  cols="50" rows="2" placeholder="Post Title"  value="<?php echo $Title; ?>"><br><br> -->
         <!-- <input name="Apost"  cols="50" rows="10" placeholder="Add text" value="<?php echo $Post; ?>"> --> 
-        <button class="btn btn-danger" type="submit" name="delete" > Yes</button>
+        <button class="btn btn-danger" type="submit" name="delete" onclick="return confirm('Are you sure you want to delete')"> Yes</button>
          <button class="btn btn-success" type="submit"><a href="index.php">No</a></button>
 
  </form>

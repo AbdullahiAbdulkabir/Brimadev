@@ -1,4 +1,4 @@
-<?php 
+<?php  session_start();
      include '../includes/database.php' ;
     $query = 'SELECT * FROM records';
     $res = mysqli_query($conn, $query);
