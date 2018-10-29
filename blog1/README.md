@@ -1,2 +1,2 @@
-# Hms
-An Hospital management System
+# Blog
+A simple blog with php
